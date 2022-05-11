@@ -1,34 +1,35 @@
+# Access Frontend Exercise
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+## Usage
 
-First, run the development server:
+### Run Development Server on Local Machine
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+1. Clone this repository to your machine.
+2. `cd access-frontend-exercise`
+3. `yarn`
+4. `yarn dev`
+5. Open <http://localhost:3000/> in your browser.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Deployed Production Environment
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+TBD.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## Correction to Exercise Document
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+GitHub API documentation links is present in exercise document as below, but the actual document page has been moved to another location.
+> • List - <https://developer.github.com/v3/users/#get-all-users>
+> • Pagination - <https://developer.github.com/v3/#link-header>
+> • Detail <https://developer.github.com/v3/users/#get-a-single-user>
 
-## Learn More
+I use these document page as GitHub API reference instead.
+> List - <https://docs.github.com/en/rest/users/users#list-users>
+> Pagination - <https://docs.github.com/en/rest/overview/resources-in-the-rest-api#link-header>
+> Detail - <https://docs.github.com/en/rest/users/users#get-a-user>
 
-To learn more about Next.js, take a look at the following resources:
+## Time Spent
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Read exercise document and related API document: about 2hr
+- Implement basic dummy frontend page without API calls: 
+- Setup react-query and add API calls to retrieve real data: 
