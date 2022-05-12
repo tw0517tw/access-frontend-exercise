@@ -1,27 +1,16 @@
+import Container from "../components/Container";
+import ErrorMessage from "../components/ErrorMessage";
 import Head from "next/head";
 import UserList from "../components/UserList";
 import axios, { AxiosError } from "axios";
 import parseLinkHeader from "parse-link-header";
-import styled from "styled-components";
 import { useQuery } from "react-query";
 import { useState } from "react";
+import type { GitHubAPIErrorBody } from "../utils/types";
 import type { GitHubUser } from "../components/UserListItem";
 import type { NextPage } from "next";
 
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 720px;
-
-  & > div {
-    font-size: 18px;
-    margin: 8px 0;
-  }
-`;
-
 type QueryData = { data: GitHubUser[]; next?: string };
-type GitHubAPIErrorBody = { message: string; documentation_url: string };
 
 const Home: NextPage = () => {
   const [since, setSince] = useState("0");
@@ -31,7 +20,7 @@ const Home: NextPage = () => {
     data: queryData,
     error,
   } = useQuery<QueryData, AxiosError<GitHubAPIErrorBody>>(
-    ["heroes", since],
+    ["users", since],
     () =>
       axios
         .get("https://api.github.com/users", {
@@ -41,9 +30,7 @@ const Home: NextPage = () => {
           },
         })
         .then((res) => {
-          console.log(res);
           const linkHeader = parseLinkHeader(res.headers.link);
-          console.log(linkHeader);
 
           return {
             data: res.data,
@@ -54,7 +41,7 @@ const Home: NextPage = () => {
   );
 
   const { data, next } = queryData || {};
-  console.log(data);
+
   return (
     <Container>
       <Head>
@@ -64,14 +51,8 @@ const Home: NextPage = () => {
       </Head>
 
       <h1>Access Frontend Exercise</h1>
-      {isLoading && "🔄"}
-      {isError && error && (
-        <div>
-          <h2>❌{error.message}</h2>
-          <div>{error.response?.data.message}</div>
-          <div>{error.response?.data.documentation_url}</div>
-        </div>
-      )}
+      {isLoading && <h1>🔄</h1>}
+      {isError && error && <ErrorMessage error={error} />}
 
       {data && (
         <>
