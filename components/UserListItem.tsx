@@ -30,8 +30,6 @@ const Right = styled.div`
   margin: 0 8px;
 `;
 
-const StyledImage = styled(Image)``;
-
 export type GitHubUser = {
   id: number;
   avatar_url: string;
@@ -52,7 +50,7 @@ const UserListItem: FC<UserListItemProps> = ({ user }) => {
         <div>{user.site_admin ? "🌟" : "⭐"}</div>
       </Left>
       <Right>
-        <StyledImage
+        <Image
           src={user.avatar_url}
           alt={user.login}
           height="100px"
