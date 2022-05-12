@@ -23,6 +23,10 @@ const ProfileGrid = styled.div`
 
   & div {
     padding: 4px;
+
+    & > a {
+      text-decoration: underline;
+    }
   }
 `;
 
@@ -66,7 +70,11 @@ const UserPage: NextPage = () => {
           <div>Location</div>
           <div>{data.location}</div>
           <div>Blog</div>
-          <div>{data.blog}</div>
+          <div>
+            <a href={data.blog} target="_blank" rel="noopener noreferrer">
+              {data.blog}
+            </a>
+          </div>
           <div>Site Admin</div>
           <div>{data.site_admin ? "True" : "False"}</div>
         </ProfileGrid>
