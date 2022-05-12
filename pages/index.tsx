@@ -42,6 +42,22 @@ const Home: NextPage = () => {
 
   const { data, next } = queryData || {};
 
+  const renderNextButton = () => {
+    return (
+      next && (
+        <div>
+          <button
+            onClick={() => {
+              setSince(next);
+            }}
+          >
+            ▶ Next Page
+          </button>
+        </div>
+      )
+    );
+  };
+
   return (
     <Container>
       <Head>
@@ -60,18 +76,9 @@ const Home: NextPage = () => {
           <div>
             ID on this page: {data[0].id} ~ {data[data.length - 1].id}
           </div>
-          {next && (
-            <div>
-              <button
-                onClick={() => {
-                  setSince(next);
-                }}
-              >
-                ▶
-              </button>
-            </div>
-          )}
+          {renderNextButton()}
           <UserList users={data}></UserList>
+          {renderNextButton()}
         </>
       )}
     </Container>
