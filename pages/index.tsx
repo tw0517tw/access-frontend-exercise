@@ -6,8 +6,7 @@ import axios, { AxiosError } from "axios";
 import parseLinkHeader from "parse-link-header";
 import { useQuery } from "react-query";
 import { useState } from "react";
-import type { GitHubAPIErrorBody } from "../utils/types";
-import type { GitHubUser } from "../components/UserListItem";
+import type { GitHubAPIErrorBody, GitHubUser } from "../utils/types";
 import type { NextPage } from "next";
 
 type QueryData = { data: GitHubUser[]; next?: string };

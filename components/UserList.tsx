@@ -1,6 +1,7 @@
-import UserListItem, { GitHubUser } from "./UserListItem";
+import UserListItem from "./UserListItem";
 import styled from "styled-components";
-import { FC } from "react";
+import type { FC } from "react";
+import type { GitHubUser } from "../utils/types";
 
 const List = styled.div`
   display: flex;

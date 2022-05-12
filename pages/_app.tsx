@@ -1,9 +1,8 @@
-import type { AppProps } from "next/app";
-
 import styled, { createGlobalStyle } from "styled-components";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
 import { useState } from "react";
+import type { AppProps } from "next/app";
 
 const GlobalStyle = createGlobalStyle`
   html,

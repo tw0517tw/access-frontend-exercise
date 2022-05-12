@@ -1,6 +1,7 @@
 import Image from "next/image";
 import styled from "styled-components";
-import { FC } from "react";
+import type { FC } from "react";
+import type { GitHubUser } from "../utils/types";
 
 const Item = styled.a`
   display: flex;
@@ -29,13 +30,6 @@ const Left = styled.div`
 const Right = styled.div`
   margin: 0 8px;
 `;
-
-export type GitHubUser = {
-  id: number;
-  avatar_url: string;
-  login: string;
-  site_admin: boolean;
-};
 
 type UserListItemProps = {
   user: GitHubUser;

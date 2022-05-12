@@ -3,18 +3,10 @@ import ErrorMessage from "../components/ErrorMessage";
 import Image from "next/image";
 import axios, { AxiosError } from "axios";
 import styled from "styled-components";
-import { GitHubAPIErrorBody } from "../utils/types";
-import { GitHubUser } from "../components/UserListItem";
-import { NextPage } from "next";
 import { useQuery } from "react-query";
 import { useRouter } from "next/router";
-
-type GitHubUserDetail = GitHubUser & {
-  name: string;
-  bio: string;
-  location: string;
-  blog: string;
-};
+import type { GitHubAPIErrorBody, GitHubUserDetail } from "../utils/types";
+import type { NextPage } from "next";
 
 const ProfileGrid = styled.div`
   display: grid;
