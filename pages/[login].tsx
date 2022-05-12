@@ -20,6 +20,10 @@ const ProfileGrid = styled.div`
   & img {
     border-radius: 24px;
   }
+
+  & div {
+    padding: 4px;
+  }
 `;
 
 const UserPage: NextPage = () => {
