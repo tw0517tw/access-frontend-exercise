@@ -27,7 +27,6 @@ const GlobalStyle = createGlobalStyle`
 const GlobalContainer = styled.div`
   display: flex;
   justify-content: center;
-  width: 100vw;
 `;
 
 function App({ Component, pageProps }: AppProps) {
