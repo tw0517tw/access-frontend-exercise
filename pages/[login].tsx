@@ -23,6 +23,8 @@ const ProfileGrid = styled.div`
   column-gap: 16px;
   row-gap: 8px;
 
+  max-width: 480px;
+
   & img {
     border-radius: 24px;
   }
