@@ -2,7 +2,7 @@ import Image from "next/image";
 import styled from "styled-components";
 import { FC } from "react";
 
-const Item = styled.div`
+const Item = styled.a`
   display: flex;
   padding: 16px;
   margin: 16px;
@@ -43,7 +43,7 @@ type UserListItemProps = {
 
 const UserListItem: FC<UserListItemProps> = ({ user }) => {
   return (
-    <Item>
+    <Item href={`/${user.login}`}>
       <Left>
         <div>ID: {user.id}</div>
         <div>name: {user.login}</div>
