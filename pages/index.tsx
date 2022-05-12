@@ -58,7 +58,7 @@ const Home: NextPage = () => {
 
   return (
     <Container>
-      <h1>Access Frontend Exercise</h1>
+      <h1>User List</h1>
       {isLoading && <h1>🔄</h1>}
       {isError && error && <ErrorMessage error={error} />}
 
