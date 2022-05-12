@@ -17,6 +17,7 @@ const Home: NextPage = () => {
     isError,
     data: queryData,
     error,
+    isFetching,
   } = useQuery<QueryData, AxiosError<GitHubAPIErrorBody>>(
     ["users", since],
     () =>
@@ -35,7 +36,7 @@ const Home: NextPage = () => {
             next: linkHeader?.next?.since,
           };
         }),
-    { refetchOnWindowFocus: false }
+    { refetchOnWindowFocus: false, keepPreviousData: true }
   );
 
   const { data, next } = queryData || {};
@@ -45,6 +46,7 @@ const Home: NextPage = () => {
       next && (
         <div>
           <button
+            disabled={isFetching}
             onClick={() => {
               setSince(next);
             }}
@@ -64,9 +66,10 @@ const Home: NextPage = () => {
 
       {data && (
         <>
-          <div>Items on this page: {data.length}</div>
+          <div>Items on this page: {isFetching ? "🔄" : data.length}</div>
           <div>
-            ID on this page: {data[0].id} ~ {data[data.length - 1].id}
+            ID on this page:{" "}
+            {isFetching ? "🔄" : `${data[0].id} ~ ${data[data.length - 1].id}`}
           </div>
           {renderNextButton()}
           <UserList users={data}></UserList>
