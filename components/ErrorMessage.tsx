@@ -7,6 +7,7 @@ const StyledErrorMessage = styled.div`
   & > div {
     margin: 16px 0;
   }
+
   & a {
     text-decoration: underline;
   }

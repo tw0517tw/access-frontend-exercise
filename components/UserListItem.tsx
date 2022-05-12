@@ -24,7 +24,15 @@ const Item = styled.a`
 `;
 
 const Left = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   margin: 0 8px;
+  font-size: 24px;
+
+  & > div {
+    margin-bottom: 8px;
+  }
 `;
 
 const Right = styled.div`
@@ -39,8 +47,7 @@ const UserListItem: FC<UserListItemProps> = ({ user }) => {
   return (
     <Item href={`/${user.login}`}>
       <Left>
-        <div>ID: {user.id}</div>
-        <div>name: {user.login}</div>
+        <div>{user.login}</div>
         <div>{user.site_admin ? "🌟" : "⭐"}</div>
       </Left>
       <Right>
