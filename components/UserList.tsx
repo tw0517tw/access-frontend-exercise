@@ -1,5 +1,11 @@
 import UserListItem, { GitHubUser } from "./UserListItem";
+import styled from "styled-components";
 import { FC } from "react";
+
+const List = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
 
 type UserListProps = {
   users: GitHubUser[];
@@ -7,11 +13,11 @@ type UserListProps = {
 
 const UserList: FC<UserListProps> = ({ users }) => {
   return (
-    <div>
+    <List>
       {users.map((user) => (
         <UserListItem key={user.id} user={user}></UserListItem>
       ))}
-    </div>
+    </List>
   );
 };
 

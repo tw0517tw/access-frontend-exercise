@@ -31,5 +31,5 @@ I use these document page as GitHub API reference instead.
 ## Time Spent
 
 - Read exercise document and related API document: about 2hr
-- Implement basic dummy frontend page without API calls: 
+- Implement basic dummy frontend page without API calls: 4+
 - Setup react-query and add API calls to retrieve real data: 

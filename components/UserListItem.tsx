@@ -1,5 +1,36 @@
 import Image from "next/image";
+import styled from "styled-components";
 import { FC } from "react";
+
+const Item = styled.div`
+  display: flex;
+  padding: 16px;
+  margin: 16px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #eeeeee;
+  border-radius: 8px;
+  min-width: 320px;
+  justify-content: space-between;
+
+  &:hover {
+    border-color: #888888;
+  }
+
+  & img {
+    border-radius: 24px;
+  }
+`;
+
+const Left = styled.div`
+  margin: 0 8px;
+`;
+
+const Right = styled.div`
+  margin: 0 8px;
+`;
+
+const StyledImage = styled(Image)``;
 
 export type GitHubUser = {
   id: number;
@@ -14,16 +45,21 @@ type UserListItemProps = {
 
 const UserListItem: FC<UserListItemProps> = ({ user }) => {
   return (
-    <div>
-      <div>{user.id}</div>
-      <div>{user.login}</div>
-      <Image
-        src={user.avatar_url}
-        alt={user.login}
-        height="100px"
-        width="100px"
-      ></Image>
-    </div>
+    <Item>
+      <Left>
+        <div>ID: {user.id}</div>
+        <div>name: {user.login}</div>
+        <div>{user.site_admin ? "🌟" : "⭐"}</div>
+      </Left>
+      <Right>
+        <StyledImage
+          src={user.avatar_url}
+          alt={user.login}
+          height="100px"
+          width="100px"
+        />
+      </Right>
+    </Item>
   );
 };
 
