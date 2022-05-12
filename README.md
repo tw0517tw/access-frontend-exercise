@@ -21,14 +21,14 @@ Open <https://access-frontend-exercise.vercel.app/> in your browser.
 ### GitHub API document location change
 
 GitHub API documentation links is present in exercise document as below, but the actual document page has been moved to another location.
-> • List - <https://developer.github.com/v3/users/#get-all-users>
-> • Pagination - <https://developer.github.com/v3/#link-header>
-> • Detail <https://developer.github.com/v3/users/#get-a-single-user>
+> • List - <https://developer.github.com/v3/users/#get-all-users>  
+> • Pagination - <https://developer.github.com/v3/#link-header>  
+> • Detail <https://developer.github.com/v3/users/#get-a-single-user>  
 
 I use these document page as GitHub API reference instead.
-> List - <https://docs.github.com/en/rest/users/users#list-users>
-> Pagination - <https://docs.github.com/en/rest/overview/resources-in-the-rest-api#link-header>
-> Detail - <https://docs.github.com/en/rest/users/users#get-a-user>
+> List - <https://docs.github.com/en/rest/users/users#list-users>  
+> Pagination - <https://docs.github.com/en/rest/overview/resources-in-the-rest-api#link-header>  
+> Detail - <https://docs.github.com/en/rest/users/users#get-a-user>  
 
 ### About README.txt
 
